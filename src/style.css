@@ -1,0 +1,150 @@
+:root{
+    --main: #ffbe31;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.header {
+   display: grid;
+   justify-items: center;
+   background-color: var(--main);
+   align-content: center;
+
+   color: white;
+   font-size: 36px;
+   font-weight: lighter;
+   height: 54px;
+}
+
+.main {
+   grid-template-columns: auto auto auto;
+   display: grid;
+}
+
+
+.mainContainer {
+   display: grid;
+   grid-template-rows: auto auto auto auto;
+   justify-items: center;
+   padding: 20px;
+}
+
+.searchBar {
+   width: 500px;
+   padding-top: 30px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.searchInput {
+   width: 100%;
+   margin-right: 10px;
+   height: 30px;
+   border-radius: 10px;
+   border: black 1px solid;
+}
+
+.searchIcon {
+   width: 30px;
+   height: 30px;
+}
+.searchIcon:hover {
+   cursor: pointer;
+}
+
+.weatherCard {
+   display: flex;
+   flex-direction: row;
+   justify-content:center;
+   padding: 10px;
+   margin-top: 35px;
+   width: 500px;
+   border-radius: 30px;
+   border: black 4px solid;
+}
+
+.weatherInfo {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   padding-left: 40px;
+   padding-right: 40px;
+   padding-top: 20px;
+   padding-bottom: 20px;
+}
+
+.cityText {
+   font-size: 36px;
+   font-weight: 500;
+   color: black;
+}
+
+.dateText {
+   font-size: 14px;
+   font-weight: lighter;
+   color: black;
+}
+
+.weatherText {
+   font-size: 30px;
+   font-weight: bold;
+   color:  var(--main);
+   margin-top: 15px;
+}
+
+.weatherIcon {
+   width: 150px;
+   height: 150px;
+   margin-left: 10px;
+   margin-top: 10px;
+}
+
+.eventBar {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+
+.eventBox {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   margin: 35px;
+}
+
+.eventSvg {
+   margin-bottom: 10px;
+   width: 60px;
+   height: 60px;
+}
+
+.recSvg {
+   margin-bottom: 10px;
+   width: 45px;
+   height: 45px;
+}
+
+.recommendation{
+    width: 500px;
+
+}
+
+.recBox{
+        
+    display: flex;
+    flex-direction: col;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.recText{
+    margin-left: 20px;
+}
