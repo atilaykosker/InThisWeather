@@ -7,7 +7,7 @@ const windText = document.getElementById("windText");
 const input = document.getElementById("searchInput");
 const weatherIcon = document.getElementById("weatherIcon");
 const link = document.getElementById("link").onclick = test
-const linkIos = document.getElementById("link").onclick = testIos
+const linkIos = document.getElementById("link2").onclick = testIos
 
 function test(){
    window.location = "intent://esnafseninle.com/#Intent;scheme=https;package=com.VgEsnafSeninle;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.VgEsnafSeninle;end";
