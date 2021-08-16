@@ -6,7 +6,12 @@ const rainText = document.getElementById("rainText");
 const windText = document.getElementById("windText");
 const input = document.getElementById("searchInput");
 const weatherIcon = document.getElementById("weatherIcon");
+const link = document.getElementById("link").onclick = test
 
+function test(){
+   setTimeout(function () { window.location = "https://play.google.com/store/apps/details?id=com.VgEsnafSeninle"; }, 25);
+   window.location = "intent://esnafseninle.com#Intent;scheme=https;";
+}
 async function searchHandler() {
    if (!input.value) {
       alert("Please Enter a Value");
