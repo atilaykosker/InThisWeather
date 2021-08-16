@@ -9,8 +9,7 @@ const weatherIcon = document.getElementById("weatherIcon");
 const link = document.getElementById("link").onclick = test
 
 function test(){
-   setTimeout(function () { window.location = "https://play.google.com/store/apps/details?id=com.VgEsnafSeninle"; }, 25);
-   window.location = "intent://esnafseninle.com#Intent;scheme=https;";
+   window.location = "intent://scan/#Intent;scheme=https;package=com.VgEsnafSeninle;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.VgEsnafSeninle;end";
 }
 async function searchHandler() {
    if (!input.value) {
