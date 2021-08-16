@@ -17,7 +17,7 @@ function test(){
 
 function testIos(){
    var c=false;
-   window.redirect( "esnafseninle://")
+   window.location.href= "esnafseninle://"
    if(this.find('Esnaf Seninle" ile')){c=true}
    if(c==false)
       setTimeout(function () {
