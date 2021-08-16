@@ -73,7 +73,6 @@ const getData = async (city) => {
 };
 
 function resetData() {
-   weatherIcon.style.display = "none";
    bootIcon.style.display = "none";
    umbrellaIcon.style.display = "none";
    waterIcon.style.display = "none";
