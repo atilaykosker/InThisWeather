@@ -1,40 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+      <meta
+         http-equiv="Content-Security-Policy"
+         content="upgrade-insecure-requests"
+      />
 
       <meta charset="UTF-8" />
-      
+
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="stylesheet" href="style.css" />
       <title>In This Weather</title>
    </head>
    <body>
-    <div class="header">
-        <p>In This Weather</p>
-     </div>
+      <div class="header">
+         <p>In This Weather</p>
+      </div>
       <div class="main">
-         <button id="link">android</button>
-         <button id="linkIos" >ios</button>
-         <div class="mainContainer">
+         <!-- <button id="link">android</button>
+         <button id="linkIos" >ios</button> -->
 
+         <div class="mainContainer">
             <div class="searchBar">
-               <input type="text" class="searchInput" id="searchInput"/>
+               <input type="text" class="searchInput" id="searchInput" />
                <a id="searchIcon">
-               <img
-                  src="./assets/search.svg"
-                  alt="Search Icon"
-                  class="searchIcon"
-               />
-            </a>
+                  <img
+                     src="./assets/search.svg"
+                     alt="Search Icon"
+                     class="searchIcon"
+                  />
+               </a>
             </div>
             <div class="weatherCard">
                <div class="weatherInfo">
                   <div class="weatherText">
                      <p class="cityText" id="cityText">London</p>
                      <p class="dateText" id="dateText">Sunday 15 August</p>
-                     <p class="weatherText" id="weatherText">22.3°C Partly cloudy</p>
+                     <p class="weatherText" id="weatherText">
+                        22.3°C Partly cloudy
+                     </p>
+                     <div class="recIconContainer">
+                        <div
+                           class="recIconBox"
+                           id="bootIcon"
+                           style="display: none"
+                        >
+                           <img
+                              src="./assets/boots.svg"
+                              alt="Boot Icon"
+                              class="recIcon"
+                           />
+                        </div>
+                        <div
+                           class="recIconBox"
+                           id="umbrellaIcon"
+                           style="display: none"
+                        >
+                           <img
+                              src="./assets/umbrella.svg"
+                              alt="Umbrella Icon"
+                              class="recIcon"
+                           />
+                        </div>
+                        <div
+                           class="recIconBox"
+                           id="waterIcon"
+                           style="display: none"
+                        >
+                           <img
+                              src="./assets/water-bottle.svg"
+                              alt="Water Icon"
+                              class="recIcon"
+                           />
+                        </div>
+                     </div>
                   </div>
                   <div class="weatherIcon">
                      <img
@@ -48,34 +88,37 @@
             </div>
             <div class="eventBar">
                <div class="eventBox">
-                   <img src="./assets/drop.svg" class="eventSvg">
+                  <img src="./assets/drop.svg" class="eventSvg" />
                   <p class="eventText" id="rainText">30%</p>
                </div>
                <div class="eventBox">
-                <img src="./assets/breeze.svg" class="eventSvg">
+                  <img src="./assets/breeze.svg" class="eventSvg" />
 
                   <p class="eventText" id="windText">9km/h</p>
                </div>
             </div>
             <div class="recommendation">
-                <div class="recBox">
-                    <img src="./assets/water-bottle.svg" class="recSvg">
-                    <label class="recText">
-                        “The weather will be 30°C. Don't forget to take your water with you.”
-                     </label>
-                </div>
-                <div class="recBox">
-                    <img src="./assets/umbrella.svg" class="recSvg">
-                    <label class="recText">
-                        “It will be rainy today. You can put your umbrella in your bag.”
-                     </label>
-                </div>
-                <div class="recBox">
-                    <img src="./assets/boots.svg" class="recSvg">
-                    <label class="recText">
-                        “Chances of heavy rain are high. If you are going to spend time outside, you can wear your boots.”
-                     </label>
-                </div>
+               <div class="recBox" id="waterCard" style="display: none">
+                  <img src="./assets/water-bottle.svg" class="recSvg" />
+                  <label class="recText">
+                     “The weather will be hot. Don't forget to take your water
+                     with you.” 🌊
+                  </label>
+               </div>
+               <div class="recBox" id="umbrellaCard" style="display: none">
+                  <img src="./assets/umbrella.svg" class="recSvg" />
+                  <label class="recText">
+                     “It will be rainy today. You can put your umbrella in your
+                     bag.” ☔
+                  </label>
+               </div>
+               <div class="recBox" id="bootsCard" style="display: none">
+                  <img src="./assets/boots.svg" class="recSvg" />
+                  <label class="recText">
+                     “Chances of heavy rain are high. If you are going to spend
+                     time outside, you can wear your boots.” 🥾
+                  </label>
+               </div>
             </div>
          </div>
       </div>

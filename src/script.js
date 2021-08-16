@@ -6,25 +6,30 @@ const rainText = document.getElementById("rainText");
 const windText = document.getElementById("windText");
 const input = document.getElementById("searchInput");
 const weatherIcon = document.getElementById("weatherIcon");
+const bootIcon = document.getElementById("bootIcon");
+const umbrellaIcon = document.getElementById("umbrellaIcon");
+const waterIcon = document.getElementById("waterIcon");
+const bootsCard = document.getElementById("bootsCard");
+const umbrellaCard = document.getElementById("umbrellaCard");
+const waterCard = document.getElementById("waterCard");
 
+// const link = document.getElementById("link").onclick = test
+// const linkIos = document.getElementById("linkIos").onclick = testIos
 
-const link = document.getElementById("link").onclick = test
-const linkIos = document.getElementById("linkIos").onclick = testIos
+// function test(){
+//    window.location = "intent://esnafseninle.com/#Intent;scheme=https;package=com.VgEsnafSeninle;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.VgEsnafSeninle;end";
+// }
 
-function test(){
-   window.location = "intent://esnafseninle.com/#Intent;scheme=https;package=com.VgEsnafSeninle;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.VgEsnafSeninle;end";
-}
+// function testIos(){
+//    var c=false;
+//    window.location.href= "esnafseninle://"
+//    if(this.find('Esnaf Seninle" ile')){c=true}
+//    if(c==false)
+//       setTimeout(function () {
+//              window.location = "https://apps.apple.com/tr/app/esnaf-seninle/id1566561528?l=tr";
 
-function testIos(){
-   var c=false;
-   window.location.href= "esnafseninle://"
-   if(this.find('Esnaf Seninle" ile')){c=true}
-   if(c==false)
-      setTimeout(function () {
-             window.location = "https://apps.apple.com/tr/app/esnaf-seninle/id1566561528?l=tr";
-   
-     }, 25);
-}
+//      }, 25);
+// }
 
 async function searchHandler() {
    if (!input.value) {
@@ -33,6 +38,11 @@ async function searchHandler() {
       let city = replaceChars(input.value);
       const weatherObj = await getData(city);
       await writeData(weatherObj);
+      await setTheme(weatherObj.avgTemp);
+      let recommends = await setRecommends(
+         weatherObj.avgTemp,
+         weatherObj.changeOfRain
+      );
    }
 }
 
@@ -45,7 +55,7 @@ const getData = async (city) => {
    let weatherObj = {
       cityName: data.location.name,
       date: data.forecast.forecastday[0].date,
-      avgTemp: data.forecast.forecastday[0].day.avgtemp_c,
+      avgTemp: data.current.temp_c,
       condition: data.forecast.forecastday[0].day.condition.text,
       changeOfRain: data.forecast.forecastday[0].day.daily_chance_of_rain,
       wind: data.forecast.forecastday[0].day.maxwind_kph,
@@ -55,15 +65,12 @@ const getData = async (city) => {
 };
 
 const writeData = (obj) => {
-   console.log(obj);
    cityName.innerHTML = obj.cityName;
    dateText.innerHTML = obj.date;
    weatherText.innerHTML = `${obj.avgTemp}°C ${obj.condition}`;
    rainText.innerHTML = obj.changeOfRain + "%";
    windText.innerHTML = obj.wind + "km/h";
-   let icon = obj.icon;
-   console.log(icon);
-   setTheme(obj.avgTemp);
+   weatherIcon.src = obj.icon;
 };
 
 function setTheme(tmp = 20) {
@@ -73,9 +80,19 @@ function setTheme(tmp = 20) {
    else if (tmp < 20) themeName = "themeAvg";
    else if (tmp < 30) themeName = "themeHot";
    else themeName = "themeHotter";
-
-   console.log(tmp);
    document.documentElement.className = themeName;
+}
+
+function setRecommends(temp, rain) {
+   let recommendations = [];
+   if (rain > 50) recommendations.push(umbrellaIcon, umbrellaCard);
+   if (rain > 50 && temp < 20) recommendations.push(bootIcon, bootsCard);
+   if (temp > 30) recommendations.push(waterIcon, waterCard);
+   recommendations.forEach((ico) => {
+      ico.style.display = "flex";
+   });
+   return recommendations;
+   // bootIcon.style.display = "flex"
 }
 
 const replaceChars = (string) => {

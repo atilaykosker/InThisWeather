@@ -8,7 +8,7 @@
 }
 
 .themeAvg{
-   --main: #91f310;
+   --main: #fadb60;
 }
 
 .themeCold{
@@ -121,7 +121,7 @@
    width: 150px;
    height: 150px;
    margin-left: 10px;
-   margin-top: 10px;
+   margin-top: 12px;
 }
 
 .eventBar {
@@ -165,4 +165,32 @@
 
 .recText{
     margin-left: 20px;
+}
+
+.recIconContainer{
+   display: flex;
+   flex-direction: row;
+   margin-top: 15px;
+}
+
+.recIconBox{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: var(--main);
+   margin-right:10px;
+   width: 60px;
+   height: 60px;
+   border-radius: 50px;
+}
+.recIcon{
+   
+   filter:  invert(100%) sepia(100%) saturate(0%) hue-rotate(7deg) brightness(102%) contrast(102%);
+   width: 35px;
+   height: 35px;
+}
+
+.recIcon svg path{
+   fill: white;
+
 }
