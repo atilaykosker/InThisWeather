@@ -16,12 +16,14 @@ function test(){
 }
 
 function testIos(){
-   window.location = "esnafseninle://"
-
-//    setTimeout(function () {
-//           window.location = "https://apps.apple.com/tr/app/esnaf-seninle/id1566561528?l=tr";
-     
-//   }, 25);
+   var c=false;
+   window.redirect( "esnafseninle://")
+   if(this.find('Esnaf Seninle" ile')){c=true}
+   if(c==false)
+      setTimeout(function () {
+             window.location = "https://apps.apple.com/tr/app/esnaf-seninle/id1566561528?l=tr";
+   
+     }, 25);
 }
 
 async function searchHandler() {
