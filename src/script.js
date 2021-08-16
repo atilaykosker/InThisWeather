@@ -31,10 +31,18 @@ const waterCard = document.getElementById("waterCard");
 //      }, 25);
 // }
 
+const sendNoty = (permission) => {
+   let noti = new Notification("Notification", {
+      body: "lorem ipsum",
+   });
+   console.log(noti);
+};
+
 async function searchHandler() {
    if (!input.value) {
       alert("Please Enter a Value");
    } else {
+      await resetData();
       let city = replaceChars(input.value);
       const weatherObj = await getData(city);
       await writeData(weatherObj);
@@ -63,6 +71,16 @@ const getData = async (city) => {
    };
    return weatherObj;
 };
+
+function resetData() {
+   weatherIcon.style.display = "none";
+   bootIcon.style.display = "none";
+   umbrellaIcon.style.display = "none";
+   waterIcon.style.display = "none";
+   bootsCard.style.display = "none";
+   umbrellaCard.style.display = "none";
+   waterCard.style.display = "none";
+}
 
 const writeData = (obj) => {
    cityName.innerHTML = obj.cityName;
