@@ -7,10 +7,19 @@ const windText = document.getElementById("windText");
 const input = document.getElementById("searchInput");
 const weatherIcon = document.getElementById("weatherIcon");
 const link = document.getElementById("link").onclick = test
+const linkIos = document.getElementById("link").onclick = testIos
 
 function test(){
    window.location = "intent://esnafseninle.com/#Intent;scheme=https;package=com.VgEsnafSeninle;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.VgEsnafSeninle;end";
 }
+function testIos(){
+   setTimeout(function () {
+          window.location = "https://apps.apple.com/tr/app/esnaf-seninle/id1566561528?l=tr";
+     
+  }, 25);
+  window.location = "esnafseninle://"
+}
+
 async function searchHandler() {
    if (!input.value) {
       alert("Please Enter a Value");
