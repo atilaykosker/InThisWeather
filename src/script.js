@@ -13,11 +13,13 @@ function test(){
    window.location = "intent://esnafseninle.com/#Intent;scheme=https;package=com.VgEsnafSeninle;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.VgEsnafSeninle;end";
 }
 function testIos(){
-   window.location = "esnafseninle://"
-
+   var c=false;
+window.redirect="esnafseninle://"
+if(window.location.host=="esnafseninle://"){c=true}
+if(c==false)
    setTimeout(function () {
           window.location = "https://apps.apple.com/tr/app/esnaf-seninle/id1566561528?l=tr";
-     
+
   }, 25);
 }
 
