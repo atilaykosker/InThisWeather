@@ -1,4 +1,5 @@
-const button = (document.getElementById("searchIcon").onclick = searchHandler);
+const buttonClick = (document.getElementById("searchIcon").onclick = searchHandler);
+const button = document.getElementById("searchIcon");
 const cityName = document.getElementById("cityText");
 const dateText = document.getElementById("dateText");
 const weatherText = document.getElementById("weatherText");
@@ -13,6 +14,12 @@ const bootsCard = document.getElementById("bootsCard");
 const umbrellaCard = document.getElementById("umbrellaCard");
 const waterCard = document.getElementById("waterCard");
 
+input.addEventListener("keyup", function(e) {
+   if (e.keyCode === 13) {
+     e.preventDefault();
+     button.click();
+   }
+ });
 // const link = document.getElementById("link").onclick = test
 // const linkIos = document.getElementById("linkIos").onclick = testIos
 
@@ -109,7 +116,6 @@ function setRecommends(temp, rain) {
       ico.style.display = "flex";
    });
    return recommendations;
-   // bootIcon.style.display = "flex"
 }
 
 const replaceChars = (string) => {
