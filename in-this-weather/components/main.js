@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import SearchBar from '../components/search-bar';
+import SearchBarContainer from '../containers/SearchBarContainer';
 import FetchData from '../scripts/fetchData';
 
 
@@ -13,26 +13,24 @@ const StyledMain = styled.div`
    height: 750px;
 `;
 
-
-
 const Main = () => {
-   const [searchValue, setSearchValue] = useState(' ');
+   // const [searchValue, setSearchValue] = useState(' ');
 
-   const changeHandler = async (e) => {
-      if (e.keyCode != 13) {
-         setSearchValue(e.target.value);
-      } else {
-         getData();
-      }
-   };
+   // const changeHandler = async (e) => {
+   //    if (e.keyCode != 13) {
+   //       setSearchValue(e.target.value);
+   //    } else {
+   //       getData();
+   //    }
+   // };
 
-   const getData = async () => {
-      const weatherObj = await FetchData(searchValue);
-      console.log(weatherObj);
-   };
+   // const getData = async () => {
+   //    const weatherObj = await FetchData(searchValue);
+   //    console.log(weatherObj);
+   // };
    return (
       <StyledMain >
-         <SearchBar onInputChange={changeHandler} title={'asd'}/>
+         <SearchBarContainer/>
       </StyledMain>
    );
 };

@@ -1,8 +1,10 @@
 /* eslint-disable react/prop-types */
+import {Component} from 'react'
+
 import styled from 'styled-components';
 import { Search } from '@styled-icons/evaicons-solid';
 
-const SearchBarContainer = styled.div`
+const SearchBarWrap = styled.div`
    display: flex;
    flex-directions: row;
    align-items: center;
@@ -26,11 +28,13 @@ const SearchIcon = styled(Search)`
 `;
 
 const SearchBar = (props) => {
+
    return (
-      <SearchBarContainer>
-         <SearchInput onKeyDown={(e) => props.onInputChange(e)} />
+      <SearchBarWrap>
+         <SearchInput onKeyUp={(e) => props.changeInputValue(e.target.value)} />
+         { props.searchInputValue}
          <SearchIcon />
-      </SearchBarContainer>
+      </SearchBarWrap>
    );
 };
 

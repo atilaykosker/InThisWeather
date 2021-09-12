@@ -1,9 +1,12 @@
-import Layout from '../components/layout';
-import Main from '../components/main';
+import Layout from '../components/Layout';
+import Main from '../components/Main';
+import Sidebar from '../components/Sidebar';
 
-export default function Home() {
+export default function Home(props) {
    return (
-      <Layout/>
-
+      <Layout>
+         <Sidebar />
+         <Main />
+      </Layout>
    );
 }

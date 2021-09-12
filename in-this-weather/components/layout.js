@@ -1,19 +1,13 @@
 /* eslint-disable react/prop-types */
 import styled from 'styled-components';
-import Main from '../components/main';
 
 const StyledLayout = styled.div`
-   background-color: white;
-   display: flex;
-   flex-direction: row;
-   justify-content: center;
-   width: 100%;
+display: flex;
 `;
-const Layout = () => {
+const Layout = ({children}) => {
    return (
       <StyledLayout>
-
-         <Main />
+         {children}
       </StyledLayout>
    );
 };
