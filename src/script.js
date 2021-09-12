@@ -20,23 +20,6 @@ input.addEventListener("keyup", function(e) {
      button.click();
    }
  });
-// const link = document.getElementById("link").onclick = test
-// const linkIos = document.getElementById("linkIos").onclick = testIos
-
-// function test(){
-//    window.location = "intent://esnafseninle.com/#Intent;scheme=https;package=com.VgEsnafSeninle;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.VgEsnafSeninle;end";
-// }
-
-// function testIos(){
-//    var c=false;
-//    window.location.href= "esnafseninle://"
-//    if(this.find('Esnaf Seninle" ile')){c=true}
-//    if(c==false)
-//       setTimeout(function () {
-//              window.location = "https://apps.apple.com/tr/app/esnaf-seninle/id1566561528?l=tr";
-
-//      }, 25);
-// }
 
 const sendNoty = (permission) => {
    let noti = new Notification("Notification", {
