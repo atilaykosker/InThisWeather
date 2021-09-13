@@ -2,8 +2,9 @@
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
 
 *Do not confuse what to wear in rapidly changing weather.*
--https://in-this-weather.vercel.app/
--https://in-this-weather.herokuapp.com/
+
+ - https://in-this-weather.vercel.app/
+ - https://in-this-weather.herokuapp.com/
 
 
 ## Getting Started
