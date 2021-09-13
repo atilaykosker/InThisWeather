@@ -1,12 +1,13 @@
 import Layout from '../components/Layout';
 import Main from '../components/Main';
-import Sidebar from '../components/Sidebar';
+import SidebarContainer from '../containers/SidebarContainer';
+import MainContainer from '../containers/MainContainer';
 
 export default function Home(props) {
    return (
       <Layout>
-         <Sidebar />
-         <Main />
+         <SidebarContainer />
+         <MainContainer />
       </Layout>
    );
 }

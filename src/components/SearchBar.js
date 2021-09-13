@@ -26,11 +26,11 @@ const SearchIcon = styled(Search)`
 `;
 
 const SearchBar = (props) => {
+   console.log(`props`, props)
 
    return (
       <SearchBarWrap>
          <SearchInput onKeyUp={(e) => props.changeInputValue(e.target.value)} />
-         { props.searchInputValue}
          <SearchIcon />
       </SearchBarWrap>
    );

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import SearchBarContainer from '../containers/SearchBarContainer';
 import FetchData from '../scripts/fetchData';
 
 
@@ -13,7 +12,7 @@ const StyledMain = styled.div`
    height: 750px;
 `;
 
-const Main = () => {
+const Main = (props) => {
    // const [searchValue, setSearchValue] = useState(' ');
 
    // const changeHandler = async (e) => {
@@ -30,7 +29,7 @@ const Main = () => {
    // };
    return (
       <StyledMain >
-         <SearchBarContainer/>
+                  { props.searchInputValue}
       </StyledMain>
    );
 };

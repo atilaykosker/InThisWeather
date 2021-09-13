@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { changeValue } from '../store/actions/SearchValue';
-import SearchBar from '../components/SearchBar';
+import Sidebar from '../components/Sidebar';
 
 const mapStateToProps = (state) => {
    return {
@@ -15,4 +15,4 @@ const mapDispatchToProps = (dispatch) => {
     }
  };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);
+export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);
