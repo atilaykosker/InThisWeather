@@ -2,7 +2,6 @@
 import styled from 'styled-components';
 
 const StyledLayout = styled.div`
-display: flex;
 `;
 const Layout = ({children}) => {
    return (

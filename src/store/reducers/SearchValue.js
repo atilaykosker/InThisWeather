@@ -1,19 +1,19 @@
-import {SEARCH_VALUE} from '../constants/SearchValue'
+import { SEARCH_VALUE } from '../constants/SearchValue';
 
 const baseState = {
-    city: '',
-}
+   city: '',
+};
 
 const getCity = (state = baseState, action) => {
-    console.log("action",action)
-    switch(action.type){
-        case 'GET_WEATHER_REQUEST':
-            return { ...state}
-        default:
-            return state
-    }
-}
+   console.log('action', action);
+   switch (action.type) {
+      case 'GET_WEATHER_REQUEST':
+         return { ...state };
+      case 'WEATHER_FETCH_SUCCEEDED':
+         return { ...action.city };
+      default:
+         return state;
+   }
+};
 
-
-
-export default getCity
+export default getCity;

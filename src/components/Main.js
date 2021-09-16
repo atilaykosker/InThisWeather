@@ -18,7 +18,7 @@ const Main = (props) => {
 
    return (
       <StyledMain >
-                  { props.city.cityName}
+                  { props.cityName}
                   
       </StyledMain>
    );

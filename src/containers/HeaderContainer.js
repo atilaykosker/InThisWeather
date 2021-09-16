@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { getWeather } from '../store/actions/SearchValue';
-import Sidebar from '../components/Sidebar';
+import Header from '../components/Header';
 
 // const mapStateToProps = (state) => {
 //    return {
@@ -15,4 +15,4 @@ const mapDispatchToProps = (dispatch) => {
     }
  };
 
-export default connect(null, mapDispatchToProps)(Sidebar);
+export default connect(null, mapDispatchToProps)(Header);
