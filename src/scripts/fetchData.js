@@ -1,4 +1,4 @@
- const getData = async (city) => {
+const getData = async (city) => {
     const rawData =
        await fetch(`http://api.weatherapi.com/v1/forecast.json?key=76686ea4e7fd4bb784d92337211508&q=${city}&days=1&aqi=no&alerts=no
      `);
@@ -16,4 +16,4 @@
     return weatherObj;
  };
 
- export default getData;
+ export default getData

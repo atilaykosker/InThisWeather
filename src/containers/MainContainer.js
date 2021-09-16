@@ -1,10 +1,14 @@
 import {connect} from 'react-redux'
 import Main from '../components/Main'
-import {changeValue} from '../store/actions/SearchValue'
 
-const mapStateToProps = state => ({
-    searchInputValue: state.searchValue.searchInputValue,
-})
+
+const mapStateToProps = state => {
+    console.log(`state`, state)
+    return{
+        ...state.getCity,
+
+    }
+}
 
 
 export default connect(mapStateToProps, null)(Main);

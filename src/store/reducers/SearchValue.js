@@ -1,16 +1,19 @@
 import {SEARCH_VALUE} from '../constants/SearchValue'
 
 const baseState = {
-    searchInputValue: ''
+    city: '',
 }
 
-const searchValue = (state = baseState, action) => {
+const getCity = (state = baseState, action) => {
+    console.log("action",action)
     switch(action.type){
-        case SEARCH_VALUE.SEARCH_VALUE:
-            return {...state , searchInputValue:action.payload}
+        case 'GET_WEATHER_REQUEST':
+            return { ...state}
         default:
             return state
     }
 }
 
-export default searchValue
+
+
+export default getCity

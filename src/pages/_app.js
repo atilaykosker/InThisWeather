@@ -1,9 +1,14 @@
 import '../styles/globals.css';
+import { createStore, applyMiddleware } from 'redux';
+import createSagaMiddleware from 'redux-saga';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+
 import rootReducer from '../store/reducers';
- 
-const store = createStore(rootReducer);
+import rootSaga from '../store/sagas';
+
+const sagaMiddleware = createSagaMiddleware();
+const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
+sagaMiddleware.run(rootSaga);
 
 function MyApp({ Component, pageProps }) {
    return (
@@ -12,5 +17,6 @@ function MyApp({ Component, pageProps }) {
       </Provider>
    );
 }
+if (module.hot) { module.hot.accept(MyApp);}
 
 export default MyApp;

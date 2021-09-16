@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import searchValue from './SearchValue';
+import getCity from './SearchValue';
 
 export default combineReducers({
-   searchValue,
+   getCity,
 });

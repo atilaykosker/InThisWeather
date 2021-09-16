@@ -1,18 +1,18 @@
 import { connect } from 'react-redux';
-import { changeValue } from '../store/actions/SearchValue';
+import { getWeather } from '../store/actions/SearchValue';
 import Sidebar from '../components/Sidebar';
 
-const mapStateToProps = (state) => {
-   return {
-      searchInputValue: state.searchValue.searchInputValue,
-   };
-};
+// const mapStateToProps = (state) => {
+//    return {
+//       searchInputValue: state.searchValue.searchInputValue,
+//    };
+// };
 
 const mapDispatchToProps = (dispatch) => {
     return{
-        changeInputValue: (searchInputValue) => dispatch(changeValue(searchInputValue)),
-
+        //changeInputValue: (searchInputValue) => dispatch(changeValue(searchInputValue)),
+        getWeather:  (city) => dispatch(getWeather(city))
     }
  };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);
+export default connect(null, mapDispatchToProps)(Sidebar);

@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import {useState} from 'react'
 import styled from 'styled-components';
 import { Search } from '@styled-icons/evaicons-solid';
 
@@ -26,12 +27,12 @@ const SearchIcon = styled(Search)`
 `;
 
 const SearchBar = (props) => {
-   console.log(`props`, props)
 
+   const [val, setVal] = useState('')
    return (
       <SearchBarWrap>
-         <SearchInput onKeyUp={(e) => props.changeInputValue(e.target.value)} />
-         <SearchIcon />
+         <SearchInput onKeyUp={(e) => setVal(e.target.value)} />
+         <SearchIcon onClick={() => props.getWeather(val)} />
       </SearchBarWrap>
    );
 };

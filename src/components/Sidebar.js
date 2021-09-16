@@ -10,7 +10,7 @@ const Sidebar = (props) => {
 
    return (
       <StyledSidebar>
-         <SearchBar{...props}/>
+         <SearchBar {...props}/>
       </StyledSidebar>
    );
 };

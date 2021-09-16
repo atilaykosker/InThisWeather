@@ -13,23 +13,13 @@ const StyledMain = styled.div`
 `;
 
 const Main = (props) => {
-   // const [searchValue, setSearchValue] = useState(' ');
 
-   // const changeHandler = async (e) => {
-   //    if (e.keyCode != 13) {
-   //       setSearchValue(e.target.value);
-   //    } else {
-   //       getData();
-   //    }
-   // };
+   console.log(`props`, props)
 
-   // const getData = async () => {
-   //    const weatherObj = await FetchData(searchValue);
-   //    console.log(weatherObj);
-   // };
    return (
       <StyledMain >
-                  { props.searchInputValue}
+                  { props.city.cityName}
+                  
       </StyledMain>
    );
 };
