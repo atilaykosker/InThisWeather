@@ -1,25 +1,47 @@
-import { useState } from 'react';
 import styled from 'styled-components';
-import FetchData from '../scripts/fetchData';
-
+import DailyConditionCard from './DailyConditionCard';
 
 const StyledMain = styled.div`
-   background-color: whitesmoke;
    display: flex;
    flex-direction: row;
-   justify-content: center;
-   width: 100%;
-   height: 750px;
+   justify-content:center;
+   max-width: 90rem;
+   height: 500px;
+   padding: 10px 1rem;
+   margin: 0 auto;
+   border: 1px solid gray;
+`;
+
+const MainContent = styled.div`
+display:flex;
+flex-direction:column ;
+align-items: center;
+`;
+
+const ConditionsContainer = styled.div`
+display:flex;
+
+flex-direction:row ;
+
+`;
+
+const HeadConditionText = styled.p`
+   font-size: 28px;
+   font-weight: bold;
+   color: black;
 `;
 
 const Main = (props) => {
-
-   console.log(`props`, props)
+   console.log(`props`, props);
 
    return (
-      <StyledMain >
-                  { props.cityName}
-                  
+      <StyledMain>
+         <MainContent>
+            <HeadConditionText>{props.cityName ? props.cityName + " is now " + props.condition: ".."}</HeadConditionText>
+            <ConditionsContainer>
+               <DailyConditionCard {...props} />
+               </ConditionsContainer>
+         </MainContent>
       </StyledMain>
    );
 };
