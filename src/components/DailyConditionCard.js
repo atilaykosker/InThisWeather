@@ -1,12 +1,62 @@
 /* eslint-disable react/prop-types */
-import styled from 'styled-components';
-import { DropletFill } from '@styled-icons/bootstrap';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
+
+import styled from 'styled-components';
+import { css } from 'styled-components';
+import { DropletFill } from '@styled-icons/bootstrap';
 
 import ExampleImage from '../assets/examplePic.png';
 
+const themeHotter = css`
+   background-color: #ff7431;
+`;
+
+const themeHot = css`
+   background-color: #ffbe31;
+`;
+
+const themeAvg = css`
+   background-color: #fadb60;
+`;
+
+const themeCold = css`
+   background-color: #0d84ff;
+`;
+
+const themeColder = css`
+   background-color: #82cbff;
+`;
+
 const StyledCard = styled.div`
    background-color: #ffedd1;
+   ${props =>{
+      if(props.themeColor == "themeHotter"){
+         return`
+         ${themeHotter};
+         `
+      }
+      if(props.themeColor == "themeHot"){
+         return`
+         ${themeHot};
+         `
+      }
+      if(props.themeColor == "themeAvg"){
+         return`
+         ${themeAvg};
+         `
+      }
+      if(props.themeColor == "themeCold"){
+         return`
+         ${themeCold};
+         `
+      }
+      if(props.themeColor == "themeColder"){
+         return`
+         ${themeColder};
+         `
+      }
+   }};
    width: auto;
    height: 191px;
    border-radius: 30px;
@@ -55,42 +105,69 @@ const DropIcon = styled(DropletFill)`
 const ConditionImage = styled.div`
    margin-left: 20px;
    margin-right: 20px;
-   margin-top:-40px;
+   margin-top: -40px;
 `;
 
 const DailyConditionCard = (props) => {
+   const [theme, setTheme] = useState('');
+
+   useEffect(() => {
+      setThemeHandler(props.avgTemp);
+   }, [props.avgTemp]);
+
+   const setThemeHandler = (temp) => {
+      let themeName = '';
+      if (temp < 0) themeName = 'themeColder';
+      else if (temp < 10) themeName = 'themeCold';
+      else if (temp < 20) themeName = 'themeAvg';
+      else if (temp < 30) themeName = 'themeHot';
+      else themeName = 'themeHotter';
+      setTheme(themeName);
+
+      StyledCard.defaultProps = {
+         theme: themeName,
+      };
+      console.log(`StyledCard`, StyledCard.defaultProps)
+   };
+
    const floatToint = (value) => {
       return value | 0;
    };
 
-   const daysList = [
-      'Sunday',
-      'Monday',
-      'Tuesday',
-      'Wednesday',
-      'Thursday',
-      'Friday',
-      'Saturday',
-   ];
-   const date = new Date(props.date);
-   const day = daysList[date.getDay()];
+   const getDateFormatted = () => {
+      const daysList = [
+         'Sunday',
+         'Monday',
+         'Tuesday',
+         'Wednesday',
+         'Thursday',
+         'Friday',
+         'Saturday',
+      ];
 
-   const dateForTime = new Date();
-   const time = ' ' + dateForTime.getHours() + ':' + dateForTime.getMinutes();
+      const date = new Date(props.date);
+      const day = daysList[date.getDay()];
+
+      const dateForTime = new Date();
+      const time =
+         ' ' + dateForTime.getHours() + ':' + dateForTime.getMinutes();
+
+      return day + time;
+   };
 
    if (props.avgTemp) {
       return (
-         <StyledCard>
+         <StyledCard themeColor={theme}>
             <ConditionsContent>
                <RainCondition>
                   <DropIcon />
                   <RainText>%{props.changeOfRain}</RainText>
                </RainCondition>
                <CelciusText>{floatToint(props.avgTemp)}°C</CelciusText>
-               <DateText>{day + time}</DateText>
+               <DateText>{getDateFormatted()}</DateText>
             </ConditionsContent>
             <ConditionImage>
-               <Image src={ExampleImage} alt=""  width={200} height={200} />
+               <Image src={ExampleImage} alt="" width={200} height={200} />
             </ConditionImage>
          </StyledCard>
       );

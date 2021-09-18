@@ -4,7 +4,7 @@ import DailyConditionCard from './DailyConditionCard';
 const StyledMain = styled.div`
    display: flex;
    flex-direction: row;
-   justify-content:center;
+   justify-content: center;
    max-width: 90rem;
    height: 500px;
    padding: 10px 1rem;
@@ -13,16 +13,15 @@ const StyledMain = styled.div`
 `;
 
 const MainContent = styled.div`
-display:flex;
-flex-direction:column ;
-align-items: center;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 `;
 
 const ConditionsContainer = styled.div`
-display:flex;
+   display: flex;
 
-flex-direction:row ;
-
+   flex-direction: row;
 `;
 
 const HeadConditionText = styled.p`
@@ -37,10 +36,14 @@ const Main = (props) => {
    return (
       <StyledMain>
          <MainContent>
-            <HeadConditionText>{props.cityName ? props.cityName + " is now " + props.condition: ".."}</HeadConditionText>
+            <HeadConditionText>
+               {props.cityName
+                  ? props.cityName + ' is now ' + props.condition
+                  : '..'}
+            </HeadConditionText>
             <ConditionsContainer>
                <DailyConditionCard {...props} />
-               </ConditionsContainer>
+            </ConditionsContainer>
          </MainContent>
       </StyledMain>
    );
