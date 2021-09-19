@@ -30,40 +30,39 @@ const themeColder = css`
 
 const StyledCard = styled.div`
    background-color: #ffedd1;
-   ${props =>{
-      if(props.themeColor == "themeHotter"){
-         return`
+   ${(props) => {
+      if (props.themeColor == 'themeHotter') {
+         return `
          ${themeHotter};
-         `
+         `;
       }
-      if(props.themeColor == "themeHot"){
-         return`
+      if (props.themeColor == 'themeHot') {
+         return `
          ${themeHot};
-         `
+         `;
       }
-      if(props.themeColor == "themeAvg"){
-         return`
+      if (props.themeColor == 'themeAvg') {
+         return `
          ${themeAvg};
-         `
+         `;
       }
-      if(props.themeColor == "themeCold"){
-         return`
+      if (props.themeColor == 'themeCold') {
+         return `
          ${themeCold};
-         `
+         `;
       }
-      if(props.themeColor == "themeColder"){
-         return`
+      if (props.themeColor == 'themeColder') {
+         return `
          ${themeColder};
-         `
+         `;
       }
    }};
-   width: auto;
+   max-width: 410px;
    height: 191px;
    border-radius: 30px;
    box-shadow: 1px 4px 9px -1px rgba(0, 0, 0, 0.15);
    display: flex;
    justify-content: space-between;
-   margin-top: 23px;
 `;
 
 const ConditionsContent = styled.div`
@@ -85,7 +84,7 @@ const CelciusText = styled.div`
 
 const DateText = styled.div`
    font-weight: 300;
-   font-size: 28px;
+   font-size: 24px;
    color: gray;
    margin-top: -10;
 `;
@@ -127,7 +126,6 @@ const DailyConditionCard = (props) => {
       StyledCard.defaultProps = {
          theme: themeName,
       };
-      console.log(`StyledCard`, StyledCard.defaultProps)
    };
 
    const floatToint = (value) => {
@@ -150,8 +148,7 @@ const DailyConditionCard = (props) => {
 
       const dateForTime = new Date();
       const time =
-         ' ' + dateForTime.getHours() + ':' + dateForTime.getMinutes();
-
+         ' ' + dateForTime.getHours() + ':' + dateForTime.toTimeString().slice(3, 5)
       return day + time;
    };
 

@@ -5,7 +5,6 @@ const baseState = {
 };
 
 const getCity = (state = baseState, action) => {
-   console.log('action', action);
    switch (action.type) {
       case 'GET_WEATHER_REQUEST':
          return { ...state };

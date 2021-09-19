@@ -14,6 +14,7 @@ const SearchBarWrap = styled.div`
    background-color: black;
    padding-right: 30px;
    padding-left: 30px;
+
 `;
 const SearchInputContainer = styled.div`
    position: absolute;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import SearchBar from './SearchBar';
 
 const StyledHeader = styled.div`
-background-color:blue;
+
 `;
 const Header = (props) => {
 

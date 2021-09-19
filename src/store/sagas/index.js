@@ -5,7 +5,6 @@ import Api from '../../scripts/fetchData';
 function* fetchWeather(action) {
 
    try {
-      console.log(`action.payload.city`, action.payload)
       const cityObj = yield call(Api, action.payload);
       yield put({ type: 'WEATHER_FETCH_SUCCEEDED', city: cityObj });
 
