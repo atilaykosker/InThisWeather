@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 import styled from 'styled-components';
 import Carousel from 'react-elastic-carousel';
 import { consts } from 'react-elastic-carousel';
 import { DropletFill } from '@styled-icons/bootstrap';
-import { RightArrow,LeftArrow } from '@styled-icons/boxicons-solid';
-
+import { RightArrow, LeftArrow } from '@styled-icons/boxicons-solid';
 
 const DropIcon = styled(DropletFill)`
    color: #00e0ff;
@@ -29,7 +29,6 @@ const HourText = styled.div`
    font-size: 30px;
    font-weight: 200;
    color: black;
-   margin-bottom: 5px;
 `;
 
 const RainCondition = styled.div`
@@ -57,6 +56,16 @@ const SlideContainer = styled.div`
    padding: 15px;
 `;
 
+const HourlyConditionContainer = styled.div`
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 5px;
+   margin-top: 5px;
+   flex-wrap: wrap;
+   gap:5px;
+`;
+
 const SliderContainer = styled.div`
    width: 650px;
    height: 160px;
@@ -69,10 +78,10 @@ const SliderContainer = styled.div`
 `;
 
 const StyledButton = styled.div`
-height:auto;
-display:flex;
-align-items:center;
-`
+   height: auto;
+   display: flex;
+   align-items: center;
+`;
 
 const HourlySlider = (props) => {
    const [currentTime, setCurrentTime] = useState(0);
@@ -92,22 +101,26 @@ const HourlySlider = (props) => {
    const breakPoints = [
       { width: 1, itemsToShow: 1 },
       { width: 550, itemsToShow: 3, itemsToScroll: 2, pagination: false },
-      { width: 850, itemsToShow: 2 }
-    ]
+      { width: 850, itemsToShow: 2 },
+   ];
 
    return (
       <SliderContainer>
          <Carousel
             breakPoints={breakPoints}
-            renderArrow={props => {
-               if(props.type === "PREV"){
-                  return(
-                     <StyledButton {...props}><LeftArrowIcon >GERİ</LeftArrowIcon></StyledButton>
-                  )
-               }else{
-                  return(
-                     <StyledButton {...props}><RightArrowIcon>ileri</RightArrowIcon></StyledButton>
-                  )
+            renderArrow={(props) => {
+               if (props.type === 'PREV') {
+                  return (
+                     <StyledButton {...props}>
+                        <LeftArrowIcon>GERİ</LeftArrowIcon>
+                     </StyledButton>
+                  );
+               } else {
+                  return (
+                     <StyledButton {...props}>
+                        <RightArrowIcon>ileri</RightArrowIcon>
+                     </StyledButton>
+                  );
                }
             }}
          >
@@ -116,7 +129,16 @@ const HourlySlider = (props) => {
                   <SlideContainer key={item.time_epoch}>
                      <HourText>{item.time.substring(11, 16)}</HourText>
                      {/* <Image src={ExampleImage} alt="" width={45} height={45} /> */}
-                     <HourText>{item.temp_c | 0}</HourText>
+                     <HourlyConditionContainer>
+                        <Image
+                           src={'/weatherIcons/' + item.condition.code + '.png'}
+                           alt=""
+                           width={40}
+                           height={40}
+                           quality={75}
+                        />
+                        <HourText>{item.temp_c | 0}°C</HourText>
+                     </HourlyConditionContainer>
                      <RainCondition>
                         <DropIcon />
                         <RainText>%6</RainText>

@@ -1,22 +1,21 @@
 import styled from 'styled-components';
 import DailyConditionCard from './DailyConditionCard';
 import HourlySlider from './HourlySlider';
+import Advices from './Advices';
 
 const StyledMain = styled.div`
    display: flex;
    flex-direction: row;
    justify-content: center;
    max-width: 90rem;
-   height: 500px;
+   height: auto;
    padding: 10px 1rem;
    margin: 0 auto;
-   border: 1px solid gray;
 `;
 
 const MainContent = styled.div`
    display: flex;
    flex-direction: column;
-   align-items: center;
 `;
 
 const ConditionsContainer = styled.div`
@@ -44,6 +43,19 @@ const HeadConditionText = styled.p`
    font-size: 32px;
    font-weight: bold;
    color: black;
+   display: flex;
+   justify-content: center;
+`;
+
+const AdvicesContainer = styled.div`
+   margin-top: 20px;
+   margin-bottom: 20px;
+   @media only screen and (max-width: 768px) {
+      margin-left: 0px;
+      margin-top: 30px;
+
+      flex-direction: column;
+   }
 `;
 
 const Main = (props) => {
@@ -62,6 +74,9 @@ const Main = (props) => {
                      <HourlySlider hourlyForecast={props.hourly} />
                   </HourlySliderContainer>
                </ConditionsContainer>
+               <AdvicesContainer>
+                  <Advices {...props} />
+               </AdvicesContainer>
             </MainContent>
          </StyledMain>
       );

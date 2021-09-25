@@ -6,26 +6,24 @@ import styled from 'styled-components';
 import { css } from 'styled-components';
 import { DropletFill } from '@styled-icons/bootstrap';
 
-import ExampleImage from '../assets/examplePic.png';
-
 const themeHotter = css`
-   background-color: #ff7431;
+   background-color: #ff9090;
 `;
 
 const themeHot = css`
-   background-color: #ffbe31;
+   background-color: #ffa572;
 `;
 
 const themeAvg = css`
-   background-color: #fadb60;
+   background-color: #ffedd1;
 `;
 
 const themeCold = css`
-   background-color: #0d84ff;
+   background-color: #d6ffff;
 `;
 
 const themeColder = css`
-   background-color: #82cbff;
+   background-color: #82ffff;
 `;
 
 const StyledCard = styled.div`
@@ -62,7 +60,8 @@ const StyledCard = styled.div`
    border-radius: 30px;
    box-shadow: 1px 4px 9px -1px rgba(0, 0, 0, 0.15);
    display: flex;
-   justify-content: space-between;
+   justify-content: space-evenly;
+   padding-right: 20px;
 `;
 
 const ConditionsContent = styled.div`
@@ -84,7 +83,7 @@ const CelciusText = styled.div`
 
 const DateText = styled.div`
    font-weight: 300;
-   font-size: 24px;
+   font-size: 21px;
    color: gray;
    margin-top: -10;
 `;
@@ -102,9 +101,9 @@ const DropIcon = styled(DropletFill)`
 `;
 
 const ConditionImage = styled.div`
-   margin-left: 20px;
+   /* margin-left: 20px;
    margin-right: 20px;
-   margin-top: -40px;
+   margin-top: -40px; */
 `;
 
 const DailyConditionCard = (props) => {
@@ -148,7 +147,10 @@ const DailyConditionCard = (props) => {
 
       const dateForTime = new Date();
       const time =
-         ' ' + dateForTime.getHours() + ':' + dateForTime.toTimeString().slice(3, 5)
+         ' ' +
+         dateForTime.getHours() +
+         ':' +
+         dateForTime.toTimeString().slice(3, 5);
       return day + time;
    };
 
@@ -164,7 +166,7 @@ const DailyConditionCard = (props) => {
                <DateText>{getDateFormatted()}</DateText>
             </ConditionsContent>
             <ConditionImage>
-               <Image src={ExampleImage} alt="" width={200} height={200} />
+               <Image src={"/weatherIcons/"+ props.code + ".png"} alt="" width={180} height={180} quality={100} />
             </ConditionImage>
          </StyledCard>
       );
