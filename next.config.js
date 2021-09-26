@@ -3,6 +3,4 @@ module.exports = {
    images: {
       domains: ['cdn.weatherapi.com'],
    },
-   useFileSystemPublicRoutes: true,
-   distDir: 'build',
 };
