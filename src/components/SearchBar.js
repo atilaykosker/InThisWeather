@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Refresh } from '@styled-icons/boxicons-regular';
 import { User } from '@styled-icons/boxicons-regular';
 import { css } from 'styled-components';
+import Image from 'next/image';
 
 const SearchBarWrap = styled.div`
    display: flex;
@@ -20,10 +21,8 @@ const SearchBarWrap = styled.div`
       min-height: 110px;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
-
+      
    }
-
 `;
 const SearchInputContainer = styled.div`
    position: absolute;
@@ -37,8 +36,7 @@ const SearchInputContainer = styled.div`
       min-height: 100px;
       flex-direction: row;
       align-items: center;
-      margin-top: 20px;
-
+      margin-top: 30px;
    }
 `;
 const SearchInput = styled.input`
@@ -59,8 +57,6 @@ const SearchInput = styled.input`
 
    @media only screen and (max-width: 1080px) {
       width: 200px;
-
-
    }
 `;
 
@@ -74,6 +70,7 @@ const LogoTitle = styled.a`
    font-size: 36px;
    font-weight: bold;
    color: white;
+   margin-left:5px;
 `;
 const Icon = css`
    color: white;
@@ -97,6 +94,7 @@ const SearchBar = (props) => {
    return (
       <SearchBarWrap>
          <LogoContainer>
+            <Image src={`/logo.png`} alt="" width={50} height={50} />
             <LogoTitle>InThisWeather</LogoTitle>
          </LogoContainer>
          <SearchInputContainer>
