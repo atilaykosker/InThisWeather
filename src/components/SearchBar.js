@@ -8,12 +8,21 @@ import { css } from 'styled-components';
 const SearchBarWrap = styled.div`
    display: flex;
    align-items: center;
-   justify-content: center;
+   justify-content: flex-start;
    position: relative;
-   height: 95px;
+   height: 100px;
    background-color: black;
    padding-right: 30px;
    padding-left: 30px;
+   @media only screen and (max-width: 1080px) {
+      display: flex;
+      height: auto;
+      min-height: 110px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+
+   }
 
 `;
 const SearchInputContainer = styled.div`
@@ -23,6 +32,14 @@ const SearchInputContainer = styled.div`
    display: flex;
    align-items: center;
    justify-content: center;
+   @media only screen and (max-width: 1080px) {
+      height: auto;
+      min-height: 100px;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 20px;
+
+   }
 `;
 const SearchInput = styled.input`
    width: 300px;
@@ -38,6 +55,13 @@ const SearchInput = styled.input`
    font-size: 18px;
    font-weight: bold;
    color: white;
+   text-align: center;
+
+   @media only screen and (max-width: 1080px) {
+      width: 200px;
+
+
+   }
 `;
 
 const LogoContainer = styled.div`
@@ -79,7 +103,6 @@ const SearchBar = (props) => {
             <SearchInput onKeyUp={(e) => setVal(e.target.value)} />
             <RefreshIcon onClick={() => props.getWeather(val)} />
          </SearchInputContainer>
-         <UserIcon />
       </SearchBarWrap>
    );
 };

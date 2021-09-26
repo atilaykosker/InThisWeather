@@ -131,7 +131,7 @@ const HourlySlider = (props) => {
                      {/* <Image src={ExampleImage} alt="" width={45} height={45} /> */}
                      <HourlyConditionContainer>
                         <Image
-                           src={'/weatherIcons/' + item.condition.code + '.png'}
+                           src={'/WeatherIcons/' + item.condition.code + '.png'}
                            alt=""
                            width={40}
                            height={40}

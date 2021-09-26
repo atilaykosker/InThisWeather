@@ -3,13 +3,12 @@ import styled from 'styled-components';
 import SearchBar from './SearchBar';
 
 const StyledHeader = styled.div`
-
+ 
 `;
 const Header = (props) => {
-
    return (
       <StyledHeader>
-         <SearchBar {...props}/>
+         <SearchBar {...props} />
       </StyledHeader>
    );
 };

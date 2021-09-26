@@ -15,6 +15,12 @@ const AdvicesMainContainer = styled.div`
 const AdvicesCardsContainer = styled.div`
    display: flex;
    justify-content: space-between; 
+   @media only screen and (max-width: 768px) {
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap:15px;
+      align-items: center;
+   }
    
 `;
 const AdviceTitle = styled.div`

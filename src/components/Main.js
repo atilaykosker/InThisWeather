@@ -5,11 +5,10 @@ import Advices from './Advices';
 
 const StyledMain = styled.div`
    display: flex;
-   flex-direction: row;
    justify-content: center;
    max-width: 90rem;
    height: auto;
-   padding: 10px 1rem;
+   padding: 10px;
    margin: 0 auto;
 `;
 
@@ -39,12 +38,17 @@ const HourlySliderContainer = styled.div`
    }
 `;
 
-const HeadConditionText = styled.p`
+const HeadConditionText = styled.div`
    font-size: 32px;
    font-weight: bold;
    color: black;
    display: flex;
    justify-content: center;
+   text-align: center;
+      margin-top: 20px;
+   @media only screen and (max-width: 768px) {
+      margin-top: 10px;
+   }
 `;
 
 const AdvicesContainer = styled.div`

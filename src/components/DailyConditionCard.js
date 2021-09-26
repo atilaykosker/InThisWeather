@@ -61,13 +61,20 @@ const StyledCard = styled.div`
    box-shadow: 1px 4px 9px -1px rgba(0, 0, 0, 0.15);
    display: flex;
    justify-content: space-evenly;
+   align-items:center;
    padding-right: 20px;
+   font-size: 20px;
+   @media only screen and (max-width: 420px) {
+      font-size: 17px;
+      height: 160px;
+
+   }
 `;
 
 const ConditionsContent = styled.div`
    display: flex;
    flex-direction: column;
-   padding: 20px 30px;
+   padding: 20px 20px;
 `;
 
 const RainCondition = styled.div`
@@ -76,20 +83,20 @@ const RainCondition = styled.div`
 `;
 
 const CelciusText = styled.div`
-   font-size: 70px;
+   font-size: 3.5em;
    font-weight: 500;
    padding: 0px;
 `;
 
 const DateText = styled.div`
    font-weight: 300;
-   font-size: 21px;
+   font-size: 1em;
    color: gray;
    margin-top: -10;
 `;
 
 const RainText = styled.div`
-   font-size: 20px;
+   font-size: 1em;
    font-weight: 700;
    color: gray;
 `;
@@ -166,7 +173,13 @@ const DailyConditionCard = (props) => {
                <DateText>{getDateFormatted()}</DateText>
             </ConditionsContent>
             <ConditionImage>
-               <Image src={"/weatherIcons/"+ props.code + ".png"} alt="" width={180} height={180} quality={100} />
+               <Image
+                  src={'/WeatherIcons/' + props.code + '.png'}
+                  alt=""
+                  width={180}
+                  height={180}
+                  quality={100}
+               />
             </ConditionImage>
          </StyledCard>
       );
