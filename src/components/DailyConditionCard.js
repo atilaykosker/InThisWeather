@@ -173,7 +173,7 @@ const DailyConditionCard = (props) => {
                <DateText>{getDateFormatted()}</DateText>
             </ConditionsContent>
             <ConditionImage>
-               <Image
+               <img
                   src={'/WeatherIcons/' + props.code + '.png'}
                   alt=""
                   width={180}
