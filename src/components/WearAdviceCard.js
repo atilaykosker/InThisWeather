@@ -5,15 +5,15 @@ import styled from 'styled-components';
 import { css } from 'styled-components';
 import { DropletFill } from '@styled-icons/bootstrap';
 import Image from 'next/image';
-import Umbrella from '../assets/umbrella.png';
 
 const StyledAdviceCard = styled.div`
    display: flex;
-   justify-content: flex-start;
+   justify-content: center;
    flex-direction: column;
+   align-items: center;
    padding: 20px;
    width: 350px;
-   height: 150px;
+   height: 280px;
    box-shadow: 3px 4px 13px rgba(0, 0, 0, 0.25);
    border-radius: 30px;
 `;
@@ -30,25 +30,38 @@ const DropIcon = styled(DropletFill)`
 `;
 
 const AdviceTitle = styled.div`
-   font-size: 22px;
-   font-weight: 400;
-   color: black;
+   margin-top: 10px;
+   font-size: 23px;
+   font-weight: 300;
+   color: gray;
+   text-align: center;
 `;
 
 const ConditionImage = styled.div`
    flex-shrink: 0;
 `;
-const AdviceCard = (props) => {
+const WearAdviceCard = (props) => {
+   console.log(props);
    return (
       <StyledAdviceCard>
          <ContentContainer>
             <ConditionImage>
-               <Image src={Umbrella} alt="" width={90} height={90} />
+               {props.items.map((element) => {
+                  return (
+                     <Image
+                        key={element}
+                        src={`/Clothes/png/${element}.png`}
+                        alt=""
+                        width={150}
+                        height={150}
+                     />
+                  );
+               })}
             </ConditionImage>
-            <AdviceTitle>{props.text}</AdviceTitle>
          </ContentContainer>
+         <AdviceTitle>{props.title}</AdviceTitle>
       </StyledAdviceCard>
    );
 };
 
-export default AdviceCard;
+export default WearAdviceCard;

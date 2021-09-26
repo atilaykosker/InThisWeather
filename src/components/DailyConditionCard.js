@@ -61,13 +61,12 @@ const StyledCard = styled.div`
    box-shadow: 1px 4px 9px -1px rgba(0, 0, 0, 0.15);
    display: flex;
    justify-content: space-evenly;
-   align-items:center;
+   align-items: center;
    padding-right: 20px;
    font-size: 20px;
    @media only screen and (max-width: 420px) {
       font-size: 17px;
       height: 160px;
-
    }
 `;
 
@@ -134,6 +133,7 @@ const DailyConditionCard = (props) => {
       };
    };
 
+
    const floatToint = (value) => {
       return value | 0;
    };
@@ -178,6 +178,7 @@ const DailyConditionCard = (props) => {
                   alt=""
                   width={180}
                   height={180}
+                  quality={100}
                />
             </ConditionImage>
          </StyledCard>

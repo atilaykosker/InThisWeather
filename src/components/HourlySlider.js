@@ -63,7 +63,7 @@ const HourlyConditionContainer = styled.div`
    margin-bottom: 5px;
    margin-top: 5px;
    flex-wrap: wrap;
-   gap:5px;
+   gap: 5px;
 `;
 
 const SliderContainer = styled.div`
@@ -112,13 +112,13 @@ const HourlySlider = (props) => {
                if (props.type === 'PREV') {
                   return (
                      <StyledButton {...props}>
-                        <LeftArrowIcon>GERİ</LeftArrowIcon>
+                        <LeftArrowIcon>Backward</LeftArrowIcon>
                      </StyledButton>
                   );
                } else {
                   return (
                      <StyledButton {...props}>
-                        <RightArrowIcon>ileri</RightArrowIcon>
+                        <RightArrowIcon>Forward</RightArrowIcon>
                      </StyledButton>
                   );
                }
@@ -128,7 +128,6 @@ const HourlySlider = (props) => {
                return (
                   <SlideContainer key={item.time_epoch}>
                      <HourText>{item.time.substring(11, 16)}</HourText>
-                     {/* <Image src={ExampleImage} alt="" width={45} height={45} /> */}
                      <HourlyConditionContainer>
                         <Image
                            src={'/WeatherIcons/' + item.condition.code + '.png'}
