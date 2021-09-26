@@ -178,7 +178,6 @@ const DailyConditionCard = (props) => {
                   alt=""
                   width={180}
                   height={180}
-                  quality={100}
                />
             </ConditionImage>
          </StyledCard>

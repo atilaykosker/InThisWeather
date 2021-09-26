@@ -135,7 +135,6 @@ const HourlySlider = (props) => {
                            alt=""
                            width={40}
                            height={40}
-                           quality={75}
                         />
                         <HourText>{item.temp_c | 0}°C</HourText>
                      </HourlyConditionContainer>

@@ -1,6 +1,7 @@
+
 module.exports = {
-  reactStrictMode: true,
-  images: {
-    domains: ['cdn.weatherapi.com'],
-  },
-}
+   reactStrictMode: true,
+   images: {
+      domains: ['cdn.weatherapi.com'],
+   },
+};
