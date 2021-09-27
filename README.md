@@ -3,6 +3,7 @@
 
 *Do not confuse what to wear in rapidly changing weather.*
 
+ - https://inthisweather.com/
  - https://in-this-weather.vercel.app/
  - https://in-this-weather.herokuapp.com/
 
