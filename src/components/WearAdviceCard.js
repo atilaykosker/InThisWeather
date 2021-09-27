@@ -41,7 +41,6 @@ const ConditionImage = styled.div`
    flex-shrink: 0;
 `;
 const WearAdviceCard = (props) => {
-   console.log(props);
    return (
       <StyledAdviceCard>
          <ContentContainer>
