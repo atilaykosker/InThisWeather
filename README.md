@@ -7,6 +7,7 @@
  - https://in-this-weather.vercel.app/
  - https://in-this-weather.herokuapp.com/
 
+"InThisWeather" is designed to give clothing advice based on weather conditions. After typing the desired city into the search bar, it gives recommendations under three main headings: Top Wear, Bottom Wear and Accessories.
 
 ## Getting Started
 
