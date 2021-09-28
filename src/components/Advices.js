@@ -28,7 +28,7 @@ const WearAdvicesCardsContainer = styled.div`
    display: flex;
    justify-content: space-between;
    margin-bottom: 30px;
-   @media only screen and (max-width: 768px) {
+   @media only screen and (max-width: 1080px) {
       flex-direction: column;
       flex-wrap: wrap;
       gap: 15px;

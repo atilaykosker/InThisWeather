@@ -23,14 +23,14 @@ const ConditionsContainer = styled.div`
    display: flex;
    justify-content: space-between;
    align-items: center;
-   @media only screen and (max-width: 768px) {
+   @media only screen and (max-width: 1080px) {
       flex-direction: column;
    }
 `;
 
 const HourlySliderContainer = styled.div`
    margin-left: 50px;
-   @media only screen and (max-width: 768px) {
+   @media only screen and (max-width: 1080px) {
       margin-left: 0px;
       margin-top: 30px;
 
@@ -46,7 +46,7 @@ const HeadConditionText = styled.div`
    justify-content: center;
    text-align: center;
       margin-top: 20px;
-   @media only screen and (max-width: 768px) {
+   @media only screen and (max-width: 1080px) {
       margin-top: 10px;
    }
 `;
@@ -54,7 +54,7 @@ const HeadConditionText = styled.div`
 const AdvicesContainer = styled.div`
    margin-top: 20px;
    margin-bottom: 20px;
-   @media only screen and (max-width: 768px) {
+   @media only screen and (max-width: 1080px) {
       margin-left: 0px;
       margin-top: 30px;
 
