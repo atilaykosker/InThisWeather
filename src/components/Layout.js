@@ -6,6 +6,7 @@ const StyledLayout = styled.div`
    min-height: 220px;
    display:flex;
    flex-direction: column;
+   
 `;
 const Layout = ({ children }) => {
    return <StyledLayout>{children}</StyledLayout>;

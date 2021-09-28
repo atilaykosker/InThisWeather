@@ -105,29 +105,19 @@ const SuggestionListContainer = styled.div`
    z-index: 1;
    margin-top: 50px;
    border-radius: 15px;
-   padding:10px;
+   padding: 10px;
    /* width */
    ::-webkit-scrollbar {
-      width: 8px;
+      width: 10px;
    }
 
-   /* Track */
    ::-webkit-scrollbar-track {
-      background: white;
-      padding-top: 20px;
-
+      border-radius: 100px;
    }
 
-   /* Handle */
    ::-webkit-scrollbar-thumb {
-      background: rgb(83, 83, 83);
-      background-clip: padding-box;
-
-   }
-
-   /* Handle on hover */
-   ::-webkit-scrollbar-thumb:hover {
-      background: #555;
+      background-color: gray;
+      border-radius: 100px;
    }
    @media only screen and (max-width: 1080px) {
       width: 200px;
@@ -164,6 +154,7 @@ const SearchBar = (props) => {
    };
 
    const onClick = (e) => {
+      props.getWeather(input)  
       setFilteredSuggestions([]);
       setInput(e.target.innerText);
       setActiveSuggestionIndex(0);
@@ -179,10 +170,9 @@ const SearchBar = (props) => {
          <SearchInputContainer>
             <AutoComplete>
                <SearchInput onChange={onChange} value={input} />
-               <SuggestionListContainer>
-                  {showSuggestions &&
-                     input &&
-                     filteredSuggestions.map((suggestion, index) => {
+               {showSuggestions && input && (
+                  <SuggestionListContainer>
+                     {filteredSuggestions.map((suggestion, index) => {
                         return (
                            <SuggestionList
                               suggestion={suggestion.name}
@@ -191,9 +181,10 @@ const SearchBar = (props) => {
                            />
                         );
                      })}
-               </SuggestionListContainer>
+                  </SuggestionListContainer>
+               )}
             </AutoComplete>
-            <RefreshIcon onClick={() => props.getWeather(input)} />
+            <RefreshIcon onClick={onClick} />
          </SearchInputContainer>
       </SearchBarWrap>
    );

@@ -1,6 +1,6 @@
 const getData = async (value) => {
    const rawData =
-      await fetch(`http://api.weatherapi.com/v1/search.json?key=76686ea4e7fd4bb784d92337211508&q=${value}
+      await fetch(`https://api.weatherapi.com/v1/search.json?key=76686ea4e7fd4bb784d92337211508&q=${value}
       `);
    const data = await rawData.json();
 
